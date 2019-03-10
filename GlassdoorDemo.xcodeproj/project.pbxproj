@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		13AF60EB22347E8B0041FAA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF60EA22347E8B0041FAA9 /* AppDelegate.swift */; };
-		13AF60ED22347E8B0041FAA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF60EC22347E8B0041FAA9 /* ViewController.swift */; };
 		13AF60F022347E8B0041FAA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13AF60EE22347E8B0041FAA9 /* Main.storyboard */; };
 		13AF60F222347E8D0041FAA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AF60F122347E8D0041FAA9 /* Assets.xcassets */; };
 		13AF60F522347E8D0041FAA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13AF60F322347E8D0041FAA9 /* LaunchScreen.storyboard */; };
+		13AF60FE22347F4C0041FAA9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF60FD22347F4C0041FAA9 /* Result.swift */; };
+		13AF6100223482B40041FAA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF60FF223482B40041FAA9 /* Response.swift */; };
+		13AF6102223482CE0041FAA9 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF6101223482CE0041FAA9 /* Review.swift */; };
+		13AF61052234848C0041FAA9 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF61042234848C0041FAA9 /* ReviewsTableViewController.swift */; };
+		13AF61072234948C0041FAA9 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF61062234948C0041FAA9 /* ReviewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13AF60E722347E8B0041FAA9 /* GlassdoorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlassdoorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AF60EA22347E8B0041FAA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13AF60EC22347E8B0041FAA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13AF60EF22347E8B0041FAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13AF60F122347E8D0041FAA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13AF60F422347E8D0041FAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13AF60F622347E8D0041FAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13AF60FD22347F4C0041FAA9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		13AF60FF223482B40041FAA9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		13AF6101223482CE0041FAA9 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		13AF61042234848C0041FAA9 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
+		13AF61062234948C0041FAA9 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,34 @@
 		13AF60E922347E8B0041FAA9 /* GlassdoorDemo */ = {
 			isa = PBXGroup;
 			children = (
-				13AF60EA22347E8B0041FAA9 /* AppDelegate.swift */,
-				13AF60EC22347E8B0041FAA9 /* ViewController.swift */,
-				13AF60EE22347E8B0041FAA9 /* Main.storyboard */,
-				13AF60F122347E8D0041FAA9 /* Assets.xcassets */,
-				13AF60F322347E8D0041FAA9 /* LaunchScreen.storyboard */,
 				13AF60F622347E8D0041FAA9 /* Info.plist */,
+				13AF61032234834A0041FAA9 /* Models */,
+				13AF60EE22347E8B0041FAA9 /* Main.storyboard */,
+				13AF61042234848C0041FAA9 /* ReviewsTableViewController.swift */,
+				13AF61062234948C0041FAA9 /* ReviewTableViewCell.swift */,
+				13AF60FC22347EF00041FAA9 /* Extras */,
 			);
 			path = GlassdoorDemo;
+			sourceTree = "<group>";
+		};
+		13AF60FC22347EF00041FAA9 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				13AF60EA22347E8B0041FAA9 /* AppDelegate.swift */,
+				13AF60F122347E8D0041FAA9 /* Assets.xcassets */,
+				13AF60F322347E8D0041FAA9 /* LaunchScreen.storyboard */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		13AF61032234834A0041FAA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13AF60FD22347F4C0041FAA9 /* Result.swift */,
+				13AF60FF223482B40041FAA9 /* Response.swift */,
+				13AF6101223482CE0041FAA9 /* Review.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13AF60ED22347E8B0041FAA9 /* ViewController.swift in Sources */,
+				13AF6102223482CE0041FAA9 /* Review.swift in Sources */,
+				13AF61072234948C0041FAA9 /* ReviewTableViewCell.swift in Sources */,
+				13AF61052234848C0041FAA9 /* ReviewsTableViewController.swift in Sources */,
+				13AF6100223482B40041FAA9 /* Response.swift in Sources */,
 				13AF60EB22347E8B0041FAA9 /* AppDelegate.swift in Sources */,
+				13AF60FE22347F4C0041FAA9 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TWFJG3F896;
 				INFOPLIST_FILE = GlassdoorDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TWFJG3F896;
 				INFOPLIST_FILE = GlassdoorDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
