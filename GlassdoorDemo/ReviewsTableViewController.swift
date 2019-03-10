@@ -14,6 +14,17 @@ class ReviewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchReviews()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 250
+    }
+    
+    /*
+     Note: Even though I used autolayout and stack views in my cell,
+     while rotating the device the spacing between the stackview were changing
+     automatically. To prevent this I have reloaded the table view when we rotate.
+     */
+    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        tableView.reloadData()
     }
 }
 
@@ -21,13 +32,10 @@ class ReviewsTableViewController: UITableViewController {
 extension ReviewsTableViewController {
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print(reviews.count)
         return reviews.count
     }
     
@@ -37,10 +45,6 @@ extension ReviewsTableViewController {
         cell.review = reviews[indexPath.row]
         
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
     
 }
@@ -58,11 +62,9 @@ extension ReviewsTableViewController {
             }
             
             guard let data = data else { return }
-            //Implement JSON decoding and parsing
             do {
                 let responseData = try JSONDecoder().decode(Response.self, from: data)
                 
-                //Get back to the main queue
                 DispatchQueue.main.async {
                     for result in responseData.response["results"]! {
                         if let review = result.review {
@@ -77,8 +79,6 @@ extension ReviewsTableViewController {
             } catch let jsonError {
                 print(jsonError)
             }
-            
-            
             }.resume()
     }
 }

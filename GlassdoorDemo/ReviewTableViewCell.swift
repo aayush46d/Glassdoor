@@ -14,7 +14,6 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var profileImageLabel: UIImageView!
     @IBOutlet weak var currentJobLabel: UILabel!
-    @IBOutlet weak var jobTitleLabel: UILabel!
     @IBOutlet weak var proStack: UIStackView!
     @IBOutlet weak var proHeadingLabel: UILabel!
     @IBOutlet weak var proTextLabel: UILabel!
@@ -37,6 +36,7 @@ class ReviewTableViewCell: UITableViewCell {
 }
 
 extension ReviewTableViewCell {
+    //populate cell with data
     func setUpCell(with review: Review)  {
         if let headline = review.headline {
             headingLabel.isHidden = false;
@@ -53,11 +53,16 @@ extension ReviewTableViewCell {
         }
         
         if let currentJob = review.currentJob {
-            currentJobLabel.text = currentJob ? "Current Employee - " : "Former Employee - "
+            currentJobLabel.isHidden = false
+            var currentJobLabelText = currentJob ? "Current Employee - " : "Former Employee - "
+            if let jobTitle = review.jobTitle {
+                currentJobLabelText += jobTitle
+            }
+            currentJobLabel.text = currentJobLabelText
+        }else {
+            currentJobLabel.isHidden = true
         }
-        if let jobTitle = review.jobTitle {
-            jobTitleLabel.text = jobTitle
-        }
+        
         if let proText = review.pros {
             proStack.isHidden = false
             proHeadingLabel.text = "Pro"
@@ -79,8 +84,5 @@ extension ReviewTableViewCell {
         }else {
             adviceStack.isHidden = true
         }
-
-        
-        
     }
 }
